@@ -43,6 +43,5 @@ int String::FastFind(String pat){
 
 int main() {
 
-
     return 0;
 }
