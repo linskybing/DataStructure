@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/LIN/Desktop/DataStructure/array",
-      "program": "c:/Users/LIN/Desktop/DataStructure/array/build/Debug/outDebug",
+      "cwd": "c:/Users/LIN/Desktop/DataStructure/stack",
+      "program": "c:/Users/LIN/Desktop/DataStructure/stack/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
