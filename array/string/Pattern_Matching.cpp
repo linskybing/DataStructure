@@ -6,14 +6,30 @@ class String{
     public:
         string str;
         int* f;
+
         String(string init_str): str(init_str) {
-            f = (int*) malloc(sizeof(int) * str.size());
+            f = new int[str.length()];            
+        }
+
+        void calculate_f() {
+            f[0] = -1;
+            cout << f[0] << " ";
+            for (int i = 1; i < str.length(); i++) {
+                int f_temp = f[i-1] + 1;
+                if(str[i] == str[f_temp]){
+                    f[i] = f_temp;
+                }
+                else {
+                    f[i] = -1;
+                }
+                cout << f[i] << " ";
+            }
         }
 
         int FastFind(String pat);
 
         int Length() {
-            return str.size();
+            return str.length();
         }
 
         ~String() {
@@ -42,6 +58,9 @@ int String::FastFind(String pat){
 }
 
 int main() {
-
+    String pat("abcabcacab");
+    pat.calculate_f();
+    String s("abcabcacacabcabcacaabcabcacab");
+    cout << '\n' << s.FastFind(pat) << endl;
     return 0;
 }
