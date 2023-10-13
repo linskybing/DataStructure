@@ -1,21 +1,27 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <utility>
 using namespace std;
 
 template <typename T>
 void print_vector(vector<T> v) {
-    for (typename vector<T>::iterator it = v.begin(); it < v.end(); it++){
-        cout << (*it) << " " ;
+    for (int i = 0; i < v.size(); i++){        
+        cout << v[i] << " ";
     }
     cout << endl;
+}
+template <typename T>
+bool cmp (const T& left,const T& right) {
+    return left > right;
 }
 
 int main() {
     // initial 
 
-    vector<int> v(10,0);
-    cout << "Initial" ;
+    vector<int> v= {10,9,8,7,6,5,4,3,2,1};
+    sort(v.begin(), v.end(), cmp<int>);
+    cout << "Initial" << endl ;
     print_vector(v);
 
     //vector<int> v2 = {0,1,2,3,4,5,6,7,8,9,10};
