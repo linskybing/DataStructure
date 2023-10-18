@@ -9,7 +9,11 @@
       "stopAtEntry": false,
       "externalConsole": true,
       "cwd": "c:/Users/LIN/Desktop/DataStructure/stack/expression",
+<<<<<<< HEAD
       "program": "c:/Users/LIN/Desktop/DataStructure/stack/expression/build/Debug/outDebug",
+=======
+      "program": "c:/Users/LIN/Desktop/DataStructure/stack/hw/build/Debug/outDebug",
+>>>>>>> 40a7d8f20acb3bba770f754bf24cf6571ecf5ff1
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -44,7 +44,7 @@ string Postfix (string e, stack<T> s) {
         }
         else {
             char last = *it;            
-            for (;(!s.empty() && icp(s.top()) >= icp(*it)) && (s.top() != '^' && last != '^'); s.pop()) {
+            for (;(!s.empty() && icp(s.top()) >= icp(*it)) && (s.top() != '^' || last != '^'); s.pop()) {
                 result += s.top();
                 last = s.top();
             }           
