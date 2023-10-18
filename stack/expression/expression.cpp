@@ -1,8 +1,8 @@
 #include <iostream>
 #include <stack>
 #define err(a,b,op) cout << a << " " << op << " "  << b << endl;
+
 using namespace std;
-typedef unsigned long long ll;
 
 int icp(char c) {
     switch (c)
@@ -44,7 +44,7 @@ string Postfix (string e, stack<T> s) {
         }
         else {
             char last = *it;            
-            for (;(!s.empty() && icp(s.top()) >= icp(*it)) && (s.top() != '^' || last != '^'); s.pop()) {
+            for (;(!s.empty() && icp(s.top()) >= icp(*it)) && (s.top() != '^' || *it != '^'); s.pop()) {
                 result += s.top();
                 last = s.top();
             }           
