@@ -8,7 +8,7 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/LIN/Desktop/DataStructure/linklist/template",
+      "cwd": "c:/Users/LIN/Desktop/DataStructure/stack/expression",
       "program": "c:/Users/LIN/Desktop/DataStructure/stack/hw/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
