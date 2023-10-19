@@ -95,11 +95,11 @@ class Chain {
 
         void printNode() {
             Node<T>* it = first;
+            cout << "Chain : ";
             for(int i = 0; i <= index && it != NULL; i++, it = it->right) {
-                err(it);
-                err(it->data);
+                cout << it->data << " ";
             }
-
+            cout << endl;
         }
     private:
         Node<T>* first;
@@ -120,14 +120,14 @@ int main() {
         {
         case 'i':
             chain.insertNode(v1, v2);
-            chain.printNode();
+            //chain.printNode();
             break;
         case 'd':
             chain.deleteNode(v1, v2);
-            chain.printNode();
+            //chain.printNode();
             break;
         case 's':
-            chain.printNode();
+            //chain.printNode();
             chain.showNode(v1, v2);
             break;
         default:
