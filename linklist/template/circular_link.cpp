@@ -26,10 +26,11 @@ class Chain {
                 Node<T>* it = findNode(pos-1);
                 newNode->left = it;
                 newNode->right = it->right;
-                //careful it->right = NULL
-                if(it->right) {
-                    it->right->left = newNode;
-                    it->right = newNode;
+                //careful it->right
+                it->right = newNode;
+                //careful newNode->right == NULL
+                if(newNode->right) {
+                    newNode->right->left = newNode;
                 }
                 if(index == pos || index == -1) last = newNode;
             }
@@ -94,10 +95,11 @@ class Chain {
 
         void printNode() {
             Node<T>* it = first;
-            for(int i = 0; i <= index; i++, it = it->right) {
-                cout << "All : " << it->data << " ";
+            for(int i = 0; i <= index && it != NULL; i++, it = it->right) {
+                err(it);
+                err(it->data);
             }
-            cout << endl;
+
         }
     private:
         Node<T>* first;
@@ -107,7 +109,7 @@ class Chain {
 
 int main() {
     Chain<int> chain;
-    
+
     char c;
     int v1, v2;
 
