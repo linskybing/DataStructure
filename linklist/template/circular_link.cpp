@@ -36,6 +36,8 @@ class Chain {
             }
             else {
                 first = last = newNode;
+                first->left = last;
+                last->right = first;
             }
             //be carefule
             index++;
@@ -44,11 +46,11 @@ class Chain {
 
         void deleteNode(int pos, int m) {
             Node<T>* temp = findNode(pos);
-            //delete
             temp->left->right = temp->right;
             temp->right->left = temp->left;
-
-            if(pos > m){
+            if(temp == first) first = temp->right;
+            if(temp == last) last = temp->left;
+            if(pos >= m){
                 //add
                 temp->right = first;
                 temp->left = last;
@@ -67,14 +69,16 @@ class Chain {
                 for(int i = v1; i < v2 && it != NULL; i++, it = it->right){
                     cout << it->data << " ";
                 }
-                if(it) cout << it->data << endl;
+                if(it) cout << it->data;
+                cout << endl;
             }
             else {
                 Node<T>* it = findNode(v1);
                 for(int i = v1; i > v2 && it != NULL; i--, it = it->left) {
                     cout << it->data << " ";
                 }
-                if(it) cout << it->data << endl;
+                if(it) cout << it->data ;
+                cout << endl;
             }
         }
 
