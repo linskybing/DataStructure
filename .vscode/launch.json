@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/linbinghong/Desktop/DataStructure/linklist/template",
-      "program": "/Users/linbinghong/Desktop/DataStructure/linklist/template/build/Debug/outDebug"
+      "cwd": "/Users/linbinghong/Desktop/DataStructure/array/string/failure",
+      "program": "/Users/linbinghong/Desktop/DataStructure/array/string/failure/build/Debug/outDebug"
     }
   ]
 }
