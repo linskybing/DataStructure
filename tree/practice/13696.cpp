@@ -10,10 +10,8 @@ class Node {
         Node<T>* subNode;
 
     public: 
-        Node(int n):number(n), nextNode(NULL){}
-
-        void addNode(int n) {
-
+        Node(int n):number(n){
+            Node<T>
         }
 };
 
