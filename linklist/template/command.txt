@@ -1,0 +1,5 @@
+g++ -o main Source.cpp;
+./main < data.txt > standard.txt;
+g++ -o main linkedlist.cpp;
+./main < data.txt > output.txt;
+diff standard.txt output.txt;
