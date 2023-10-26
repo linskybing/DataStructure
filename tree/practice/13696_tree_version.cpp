@@ -47,17 +47,14 @@ class chain {
             while(it) {
                 previous = it;
                 it = it->nextnode;
-                if(previous)
-                    delete previous;
+                previous->~node();
             }
-            first = last = NULL;
-            height = -1;
         }
 };
 
 int dfs(chain* tree_list, int position) {
 
-    //if(tree_list[position].height != -1) return tree_list[position].height;
+    if(tree_list[position].height != -1) return tree_list[position].height;
 
     if(tree_list[position].first == NULL) {
         tree_list[position].height = 0;
@@ -81,22 +78,22 @@ int dfs(chain* tree_list, int position) {
 int main() {
     int cases;
     cin >> cases;
+    chain** tree_list = new chain[MAX_SIZE+1][MAX_SIZE+1];
 
+    for(int i = 0;)
     while(cases--) {
-        int node_number;
+       int node_number;
         cin >> node_number;
 
-        chain* tree_list = new chain[node_number+2];
-
-
         int node_one, node_two;
-
-        for(int i = 0; i < node_number-1; i++) {
-            cin >> node_one >> node_two;
+        while (cin >> node_one >> node_two){
             tree_list[node_one].add(node_two);
+            if(node_two == node_number) break;
         }
 
-        dfs(tree_list, 1);
+        for(int i = 1; i <= node_number; i++) {
+            dfs(tree_list, i);
+        }
 
         int max = -1;
 
@@ -120,12 +117,6 @@ int main() {
         }
 
         cout << max << endl;
-
-        for(int i = 1; i <= node_number; i++) {
-            tree_list[i].recycle();
-        }
-
-        delete [] tree_list;
     }
 
 }

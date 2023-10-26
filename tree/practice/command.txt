@@ -1,0 +1,2 @@
+g++ -o main 13696.cpp;
+./main < data.txt
