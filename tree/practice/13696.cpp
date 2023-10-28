@@ -18,8 +18,8 @@ class chain {
         node* first;
         node* last;
         int height;
-
-        chain():first(NULL), last(NULL), height(-1){}
+        bool flag;
+        chain():first(NULL), last(NULL), height(-1), flag(false){}
 
         void add(int n){
             node* newnode = new node(n);
@@ -57,7 +57,9 @@ class chain {
 
 int dfs(chain* tree_list, int position) {
 
-    //if(tree_list[position].height != -1) return tree_list[position].height;
+    tree_list[position].flag = true;
+
+    if(tree_list[position].height != -1) return tree_list[position].height;
 
     if(tree_list[position].first == NULL) {
         tree_list[position].height = 0;
@@ -66,8 +68,9 @@ int dfs(chain* tree_list, int position) {
 
     node* current = tree_list[position].first;
     int deep = 0;
-    int max = -1;
+    int max = 0;
     for(;current != NULL; current = current->nextnode) {
+        //cout << position << " to " << current->number << ":" << tree_list[current->number].flag << endl;
         deep = dfs(tree_list, current->number) + 1;
         if(deep > max) max = deep;
     }
@@ -95,17 +98,24 @@ int main() {
             cin >> node_one >> node_two;
             tree_list[node_one].add(node_two);
         }
+        for(int i = 1; i <= node_number; i++) {
+            dfs(tree_list, i);
+        }
 
-        dfs(tree_list, 1);
+        /*for(int i = 1; i <= node_number; i++) {
+            cout << i << ": ";
+            cout << tree_list[i].height << endl;
+        }
+        cout << endl; */
 
-        int max = -1;
+        int max = 0;
 
         for(int i = 1; i <= node_number; i++){
             node* current = tree_list[i].first;
 
             int first_max = 0;
             int second_max = 0;
-
+            tree_list[i].flag = true;
             for(;current != NULL; current = current->nextnode){
                 int temp = tree_list[current->number].height + 1;
 
