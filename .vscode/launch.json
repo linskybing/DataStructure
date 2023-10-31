@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/linbinghong/Desktop/¿/tree/practice",
-      "program": "/Users/linbinghong/Desktop/¿/tree/practice/build/Debug/outDebug"
+      "cwd": "/Users/linbinghong/Desktop/DataStruture/tree/linked_list",
+      "program": "/Users/linbinghong/Desktop/DataStruture/tree/linked_list/build/Debug/outDebug"
     }
   ]
 }
