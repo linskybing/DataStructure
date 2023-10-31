@@ -1,2 +1,0 @@
-g++ -o main linked_list.cpp
-./main < data.txt

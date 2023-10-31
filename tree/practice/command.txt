@@ -1,3 +1,0 @@
-g++ -o main 13696.cpp;
-./main < data.txt > output.txt
-diff answer.txt output.txt
