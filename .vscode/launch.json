@@ -3,11 +3,13 @@
   "configurations": [
     {
       "name": "C/C++ Runner: Debug Session",
-      "type": "lldb",
+      "type": "cppvsdbg",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/linbinghong/Desktop/DataStruture/tree/linked_list",
-      "program": "/Users/linbinghong/Desktop/DataStruture/tree/linked_list/build/Debug/outDebug"
+      "stopAtEntry": false,
+      "console": "externalTerminal",
+      "cwd": "c:/Users/LIN/Desktop/DataStructure/stack/expression",
+      "program": "c:/Users/LIN/Desktop/DataStructure/stack/expression/build/Debug/outDebug"
     }
   ]
 }
