@@ -1,13 +1,13 @@
 {
   "version": "0.2.0",
-  "configurations": [
+  "configurations": [s
     {
       "name": "C/C++ Runner: Debug Session",
-      "type": "lldb",
+      "type": "cppvsdbg",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/linbinghong/Desktop/DataStruture/tree/array",
-      "program": "/Users/linbinghong/Desktop/DataStruture/tree/array/build/Debug/outDebug"
+      "cwd": "/Users/linbinghong/Desktop/DataStruture/tree/linked_list",
+      "program": "/Users/linbinghong/Desktop/DataStruture/tree/linked_list/build/Debug/outDebug"
     }
   ]
 }
