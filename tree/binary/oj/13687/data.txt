@@ -1,0 +1,16 @@
+insert 2
+insert 8
+insert 9
+insert 13
+insert 5
+insert 7
+insert 10
+insert 1
+insert 14
+search 9
+delete 9
+search 9
+delete 13
+search 10
+inorder
+postorder
