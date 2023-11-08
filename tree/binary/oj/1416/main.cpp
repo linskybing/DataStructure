@@ -96,17 +96,17 @@ class bst {
             cout << this->key << endl;
         }
 
-        int size_tree(bst* root) {
-            if (root->left && root->right) {
-                int result = size_tree(root->left) + this->right->size_tree(root->right) + 1;                
+        int size_tree() {
+            if (this->left && this->right) {
+                int result = this->left->size_tree() + this->right->size_tree() + 1;                
                 return result;
             }
             else if(this->left) {
-                int result = size_tree(root->left) + 1;                
+                int result = this->left->size_tree() + 1;                
                 return result;
             }
             else if(this->right) {
-                int result = size_tree(root->right) + 1;                
+                int result = this->right->size_tree() + 1;                
                 return result;
             }
             else {                
@@ -136,7 +136,7 @@ int main() {
             cin >> size;
             target = NULL;
             target = root->search(root, size);
-            if(target) cout << root->size_tree(target) << endl;
+            if(target) cout << target->size_tree() << endl;
             else cout << -1 << endl;
 
         }
