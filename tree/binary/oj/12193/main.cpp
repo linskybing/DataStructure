@@ -17,7 +17,7 @@ class bst {
             else if (value > root->key) {
                 root->right = insert(root->right, value);
             }
-            else {
+            else if (value < root->key){
                 root->left = insert(root->left, value);
             }
             return root;

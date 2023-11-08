@@ -1,4 +1,5 @@
-0
+7
+9 3 1 5 7 10 34
 6
 AverLevel 2
 AverLevel 3
