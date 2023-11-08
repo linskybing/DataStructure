@@ -96,24 +96,20 @@ class bst {
             cout << this->key << endl;
         }
 
-        int size_tree(int size) {
-            if (this->left && this->right) {
-                int result = this->left->size_tree(size) + this->right->size_tree(size) + 1;
-                if (result == size) target = this;
+        int size_tree(bst* root) {
+            if (root->left && root->right) {
+                int result = size_tree(root->left) + this->right->size_tree(root->right) + 1;                
                 return result;
             }
             else if(this->left) {
-                int result = this->left->size_tree(size) + 1;
-                if (result == size) target = this;
+                int result = size_tree(root->left) + 1;                
                 return result;
             }
             else if(this->right) {
-                int result = this->right->size_tree(size) + 1;
-                if (result == size) target = this;
+                int result = size_tree(root->right) + 1;                
                 return result;
             }
-            else {
-                if (1 == size) target = this;
+            else {                
                 return 1;
             }
         }
@@ -139,8 +135,8 @@ int main() {
             int size;
             cin >> size;
             target = NULL;
-            root->size_tree(size);
-            if(target) cout << root->size_tree(size) << endl;
+            target = root->search(root, size);
+            if(target) cout << root->size_tree(target) << endl;
             else cout << -1 << endl;
 
         }
