@@ -12,10 +12,5 @@ delete 9
 search 9
 delete 13
 search 10
-delete 2
-insert 16
-delete 10
-delete 5
-delete 7
 inorder
 postorder

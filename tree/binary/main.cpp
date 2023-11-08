@@ -48,12 +48,44 @@ class bst {
         return false;
     }
 
-    void delete_node() {
-        if(this->left && this->right) {
+    bst* find_max() {
+        bst* current = this;
+        bst* parent = NULL;
 
+        while(current) {
+            parent = current;
+            current = current->right;
         }
+
+        return parent;
     }
 
+    bst* find_min() {
+        bst* current = this;
+        bst* parent = NULL;
+
+        while(current) {
+            parent = current;
+            current = current->left;
+        }
+        return parent;
+    }
+
+    void delete_node(int key) {
+        bst* cur = this;
+        bst* par = NULL;
+
+        while(cur && cur->key != key) {
+            par = cur;
+            if(cur->key < key) cur = cur->right;
+            else if(cur->key > key) cur = cur->left;
+        }
+
+        if(par == NULL) {
+            
+        }
+   
+    }
     void inorder(){
         
         if (this->left) this->left->inorder();
@@ -63,7 +95,6 @@ class bst {
     }
 
     void preorder() {
-
         cout << this->key << endl;
         if(this->left) this->left->inorder();
         if(this->right) this->right->inorder();
@@ -95,7 +126,10 @@ int main() {
             count ++;
         }
         else if (action == "delete") {
-
+            int key;
+            cin >> key;
+            root->delete_node(key);
+            count --;
         }
         else if (action == "preorder") {
             if (root) root->preorder();
@@ -107,7 +141,9 @@ int main() {
             if (root) root->inorder();
         }
         else if (action == "search") {
-
+            int key;
+            cin >> key;
+            cout << ((root->search(key))? "Found" : "Not Found" )<< endl;
         }
 
     }
